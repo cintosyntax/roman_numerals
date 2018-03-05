@@ -3,7 +3,7 @@ module RomanNumerals
     class InvalidArgument < StandardError; end
 
     def to_roman_numeral
-      raise InvalidArgument if self > 3000 || self <= 0
+      raise InvalidArgument if self <= 0
       convert_to_roman_numeral(self)
     end
 

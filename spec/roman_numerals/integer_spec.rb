@@ -1,6 +1,6 @@
 RSpec.describe RomanNumerals::Integer do
-  describe 'decorate integer' do
-    it 'should be included on integers' do
+  describe 'decorate Integer class' do
+    it 'should be included on Integer class ancestors' do
       expect(Integer.ancestors).to include(RomanNumerals::Integer)
     end
   end
@@ -32,12 +32,6 @@ RSpec.describe RomanNumerals::Integer do
     end
 
     describe "given an unsupported integer" do
-      context 'when given a integer over 3000' do
-        let(:integer) { 3001 }
-        it 'should raise an InvalidArgument error' do
-          expect { subject }.to raise_error(RomanNumerals::Integer::InvalidArgument)
-        end
-      end
 
       context 'when given a integer equal to 0' do
         let(:integer) { 0 }
